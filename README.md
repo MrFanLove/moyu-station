@@ -91,4 +91,3 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
     git push
     ```
 
-**这样修改后，任何人点进你的 GitHub 仓库，都会觉得这是一个架构严谨、交互细腻的成熟工具！**
