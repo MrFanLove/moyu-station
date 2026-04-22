@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>摸鱼驿站</title>
+    <style>
+    body {
+      background: transparent !important;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* ❌ body 不要写 drag */
+    }
+
+    .moyu-widget {
+      /* ... 之前的毛玻璃样式 ... */
+      
+      /* ✅ 整个卡片允许拖拽 */
+      -webkit-app-region: drag; 
+      
+      width: 300px;
+      min-height: 120px;
+      padding: 20px;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 12px;
+    }
+
+    /* ✅ 重点：内容区域必须设为 no-drag，否则它会挡住 Command+O 等所有事件 */
+    .content, .header, .page-info {
+      -webkit-app-region: no-drag;
+      user-select: none;
+    }
+  </style>
+  </head>
+  <body>
+  <div id="app"></div> <script type="module" src="./src/main.ts"></script> 
+</body>
+</html>

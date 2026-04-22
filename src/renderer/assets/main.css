@@ -1,0 +1,53 @@
+/* src/renderer/src/assets/main.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* 强制覆盖默认背景，让 body 完全透明 */
+  background: transparent !important; 
+  overflow: hidden;
+  user-select: none;
+  /* 核心：让整个透明窗口可以被鼠标拖拽 */
+  -webkit-app-region: drag; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* 居中我们的摸鱼组件 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 摸鱼小卡片：半透明 + 磨砂玻璃 */
+.moyu-widget {
+  background: rgba(0, 0, 0, 0.4); 
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px); /* macOS 灵魂：毛玻璃效果 */
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.content {
+  font-size: 24px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums; /* 让数字等宽，时钟跳动时不会晃 */
+}
+
+/* 内部按钮等元素取消拖拽，防止无法点击 */
+.no-drag {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}

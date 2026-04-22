@@ -1,0 +1,12 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
+  "include": [
+    "src/renderer/src/**/*.ts",
+    "src/renderer/src/**/*.tsx",
+    "src/renderer/src/**/*.vue",
+    "src/renderer/src/env.d.ts"  // ✅ 确保包含了这个声明文件
+  ],
+  "compilerOptions": {
+    "composite": true
+  }
+}
